@@ -1,12 +1,20 @@
-import { StrictMode } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
+import {'BrowserRouter, Switch, Route'} from 'react-router-dom';
+import App from "./components/App";
+import App from "./components/Success";
 
-import App from "./App";
+const Routes = () (
+  <BrowserRouter>
+    <switch>
+      <Route exact path = "/" component = {App}/>
+      <Route path ="/success" component = {Success}/>
+    </switch>
+  </BrowserRouter>
+)
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+  <Routes />,
   rootElement
 );
